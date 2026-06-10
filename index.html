@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohammad Ali Mahdi | Portfolio & CV</title>
+  <meta name="description" content="Personal portfolio and CV of Mohammad Ali Mahdi - Software developer, student at the University of Oulu, Finland. Specializing in Python, Java, Flutter, FastAPI, and AI applications.">
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta property="og:title" content="Mohammad Ali Mahdi | Portfolio & CV">
+  <meta property="og:description" content="Portfolio of Mohammad Ali Mahdi, demonstrating experience in Flutter, Python, and AI agent frameworks.">
+  <meta property="og:type" content="website">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header>
+    <div class="container nav-container">
+      <a href="#hero" class="logo">
+        M. Ali<span> Mahdi</span>
+      </a>
+      <button class="hamburger" aria-label="Toggle Navigation menu" id="hamburger-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="container hero-wrapper">
+      <div class="hero-content">
+        <span class="hero-greeting">HELLO WORLD, I'M</span>
+        <h1 class="hero-title">Mohammad Ali Mahdi</h1>
+        <div class="hero-typing">
+          <span id="typing-text"></span><span class="typing-cursor">|</span>
+        </div>
+        <p class="hero-desc">
+          An aspiring Software Engineering student based in Oulu, Finland. Passionate about software craftsmanship, mobile and web applications, automation, and integrations with AI technologies.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            View My Work
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="Ali Mahdi's CV.pdf" class="btn btn-secondary" download="Mohammad_Ali_Mahdi_CV.pdf">
+            Download CV
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Premium Hero Interactive Card Visual -->
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <div class="hero-card glass-panel">
+          <div class="hero-card-brand">Oulu, FI</div>
+          <div class="hero-card-mid">
+            <h3>B.Sc. Student</h3>
+            <p>Software and Applications Development & Analysis</p>
+          </div>
+          <div class="hero-card-bottom">
+            <span class="hero-card-code">const dev = true;</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Stats Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Introspect</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="about-content">
+        <p>
+          I am an aspiring student developer, currently pursuing a Bachelor of Science at the University of Oulu. A hard-working, goal-oriented individual, I thrive on taking a logical and disciplined approach to solving software problems.
+        </p>
+        <p>
+          I excel in high-pressure situations, keeping a calm head to organize my options and identify the most efficient paths forward. My current areas of focus include application architectural design patterns, Flutter development, and building automated retrieval systems (RAG models) powered by AI.
+        </p>
+        <p>
+          Always looking to gain hands-on experience, expand my tech stack, and collaborate on challenging technical systems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Expertise</span>
+        <h2 class="section-title">Technical Arsenal</h2>
+      </div>
+      <div class="skills-grid">
+        
+        <!-- Programming -->
+        <div class="skills-category glass-panel">
+          <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            Programming & Core
+          </h3>
+          <div class="skills-list">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Dart</span>
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">Git & GitHub</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">GitLab CI</span>
+            <span class="skill-tag">Linux (WSL)</span>
+            <span class="skill-tag">App Design Patterns</span>
+          </div>
+        </div>
+        
+        <!-- Frameworks & Libraries -->
+        <div class="skills-category glass-panel">
+          <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+            Frameworks & Tools
+          </h3>
+          <div class="skills-list">
+            <span class="skill-tag">Flutter</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">REST APIs</span>
+          </div>
+        </div>
+
+        <!-- AI & Advanced Technologies -->
+        <div class="skills-category glass-panel">
+          <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            AI Engineering
+          </h3>
+          <div class="skills-list">
+            <span class="skill-tag">RAG Architecture</span>
+            <span class="skill-tag">LangChain</span>
+            <span class="skill-tag">MCP Servers</span>
+            <span class="skill-tag">Prompt Modification</span>
+            <span class="skill-tag">Context Tuning</span>
+          </div>
+        </div>
+
+        <!-- Data Management -->
+        <div class="skills-category glass-panel">
+          <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path></svg>
+            Data Management
+          </h3>
+          <div class="skills-list">
+            <span class="skill-tag">Data Quality Analysis</span>
+            <span class="skill-tag">Data Cleaning & Profiling</span>
+            <span class="skill-tag">Data Manipulation</span>
+            <span class="skill-tag">Data Visualization</span>
+            <span class="skill-tag">Validation Logic</span>
+          </div>
+        </div>
+
+        <!-- Design & Engineering -->
+        <div class="skills-category glass-panel">
+          <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+            Design & Planning
+          </h3>
+          <div class="skills-list">
+            <span class="skill-tag">Requirements Engineering</span>
+            <span class="skill-tag">Risk Assessment</span>
+            <span class="skill-tag">Risk Management</span>
+            <span class="skill-tag">UML Designing</span>
+            <span class="skill-tag">User Flow Diagrams</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">CREATIONS</span>
+        <h2 class="section-title">Selected Projects</h2>
+      </div>
+      <div class="projects-grid">
+        
+        <!-- Project 1: Oulu Botanical Garden -->
+        <div class="project-card glass-panel">
+          <div class="project-media-slot">
+            <!-- If user places 'assets/botani_nav.png', it displays; otherwise hides itself cleanly -->
+            <img class="project-image" src="assets/botani_nav.png" alt="Oulu Botanical Garden App Screenshot" onerror="this.style.display='none'">
+            <div class="project-media-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Add botani_nav.png Here</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-header-row">
+              <h3 class="project-title">Botanical Garden Nav</h3>
+              <span class="project-role-badge">Lead Developer</span>
+            </div>
+            <div class="project-timeline">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              17/05/2026 - 06/06/2026
+            </div>
+            <p class="project-desc">
+              A comprehensive mobile and web indoor navigation system custom built for the University of Oulu Botanical Garden. Authored the full-stack architecture, featuring custom routing algorithms and location-aware pathfinders.
+            </p>
+            <div class="project-tech">
+              <span>Flutter</span>
+              <span>Python</span>
+              <span>FastAPI</span>
+              <span>Navigation Logic</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Mojojojo9975/BotaniNav" target="_blank" class="btn btn-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                Frontend
+              </a>
+              <a href="https://github.com/Mojojojo9975/BotaniNavBack" target="_blank" class="btn btn-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                Backend
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Datamend -->
+        <div class="project-card glass-panel">
+          <div class="project-media-slot">
+            <img class="project-image" src="assets/datamend.png" alt="Datamend App Screenshot" onerror="this.style.display='none'">
+            <div class="project-media-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+              <span>Add datamend.png Here</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-header-row">
+              <h3 class="project-title">Datamend</h3>
+              <span class="project-role-badge">Co-Creator</span>
+            </div>
+            <div class="project-timeline">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              19/09/2025 - 21/12/2025
+            </div>
+            <p class="project-desc">
+              An analytics application that ingests unstructured or raw data, profiles it for irregularities, and delivers intelligent, AI-guided suggestions to repair data quality. Equipped with robust visual dashboards.
+            </p>
+            <div class="project-tech">
+              <span>Python</span>
+              <span>Data Validation</span>
+              <span>Data Visualisation</span>
+              <span>AI Engine</span>
+            </div>
+            <div class="project-links">
+              <a href="https://www.youtube.com/watch?v=4jYDVjbDELg" target="_blank" class="btn btn-primary" style="width: 100%;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                Watch Video Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: CampaignClickR -->
+        <div class="project-card glass-panel">
+          <div class="project-media-slot">
+            <img class="project-image" src="assets/campaign_clickr.png" alt="CampaignClickR Screenshot" onerror="this.style.display='none'">
+            <div class="project-media-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+              <span>Add campaign_clickr.png Here</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-header-row">
+              <h3 class="project-title">CampaignClickR</h3>
+              <span class="project-role-badge">Workflow Engineer</span>
+            </div>
+            <div class="project-timeline">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              17/12/2025 - 19/12/2025
+            </div>
+            <p class="project-desc">
+              An automated workflow orchestrator developed for Procter & Gamble (P&G). Seamlessly replicates operational actions, executing strict tasks without interfering or requiring updates to their legacy pipeline patterns.
+            </p>
+            <div class="project-tech">
+              <span>Automation</span>
+              <span>APIs</span>
+              <span>Workflow Logic</span>
+              <span>P&G Specifications</span>
+            </div>
+            <div class="project-links">
+              <a href="https://www.youtube.com/watch?v=1tsqgPLbrIw" target="_blank" class="btn btn-primary" style="width: 100%;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                Watch Video Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: BookRAG -->
+        <div class="project-card glass-panel">
+          <div class="project-media-slot">
+            <img class="project-image" src="assets/bookrag.png" alt="BookRAG Screenshot" onerror="this.style.display='none'">
+            <div class="project-media-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              <span>Add bookrag.png Here</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-header-row">
+              <h3 class="project-title">BookRAG</h3>
+              <span class="project-role-badge">Co-Creator</span>
+            </div>
+            <div class="project-timeline">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              11/12/2025 - 22/12/2025
+            </div>
+            <p class="project-desc">
+              A specialized local RAG conversational assistant inspired by Google NotebookLM. Tailored specifically for NCTB curriculum students of Bangladesh. Implements query refinement and local history preservation.
+            </p>
+            <div class="project-tech">
+              <span>LangChain</span>
+              <span>RAG</span>
+              <span>Advanced Retrieval</span>
+              <span>Local LLM</span>
+            </div>
+            <div class="project-links">
+              <a href="https://youtu.be/psGAvcGFxF8" target="_blank" class="btn btn-primary" style="width: 100%;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                Watch Video Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience Section -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">HISTORY</span>
+        <h2 class="section-title">Work Experience</h2>
+      </div>
+      
+      <div class="timeline">
+        
+        <!-- Experience 1: Oulu Botanical Garden -->
+        <div class="timeline-item left">
+          <div class="timeline-card glass-panel">
+            <h3 class="timeline-role">Designer & Developer</h3>
+            <a href="https://www.oulu.fi/fi" target="_blank" class="timeline-company">University of Oulu Botanical Garden</a>
+            <div class="timeline-date">17/05/2026 - 17/06/2026 | Oulu, Finland</div>
+            <ul class="timeline-bullets">
+              <li>Engineered a navigation mobile/web system from scratch to guide botanical garden visitors.</li>
+              <li>Successfully gathered and translated implicit and explicit customer needs into product features.</li>
+              <li>Designed and built a mobile frontend with Flutter and a responsive API backend utilizing Python and FastAPI.</li>
+            </ul>
+            <div style="display: flex; gap: 0.75rem;">
+              <a href="https://github.com/Mojojojo9975/BotaniNav" target="_blank" class="timeline-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                Git Frontend
+              </a>
+              <a href="https://github.com/Mojojojo9975/BotaniNavBack" target="_blank" class="timeline-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                Git Backend
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 2: Quicksheft -->
+        <div class="timeline-item right">
+          <div class="timeline-card glass-panel">
+            <h3 class="timeline-role">IT Team Developer</h3>
+            <a href="https://www.linkedin.com/company/quicksheft/posts/?feedView=all" target="_blank" class="timeline-company">Quicksheft</a>
+            <div class="timeline-date">01/09/2025 - 10/01/2026 | Oulu, Finland</div>
+            <ul class="timeline-bullets">
+              <li>Owned structured system documentation and requirements elicitation activities for business workflows.</li>
+              <li>Collaborated on building backend systems and cross-platform UI interfaces using Flutter.</li>
+            </ul>
+            <a href="https://www.linkedin.com/company/quicksheft/posts/?feedView=all" target="_blank" class="timeline-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              View Company Posts
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Languages Section -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="edu-lang-grid">
+        
+        <!-- Education column -->
+        <div>
+          <div class="section-header">
+            <span class="section-subtitle">LEARNING</span>
+            <h2 class="section-title">Education</h2>
+          </div>
+          <div class="education-cards">
+            
+            <!-- University of Oulu -->
+            <div class="edu-card glass-panel">
+              <h3>Bachelor of Science</h3>
+              <div class="edu-institution">University of Oulu</div>
+              <div class="timeline-date">01/09/2024 - Present | Oulu, Finland</div>
+              <div class="edu-details">
+                <span><strong>Major:</strong> Software and Applications Development and Analysis</span>
+                <span><strong>Credits:</strong> 170 ECTS Credits</span>
+                <span><strong>GPA/Grade:</strong> 4 / 5</span>
+                <span><strong>Thesis:</strong> Positive Impact of Ethnographic Analysis in Software Engineering</span>
+              </div>
+              <a href="https://www.oulu.fi/fi" target="_blank" class="timeline-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                University Portal
+              </a>
+            </div>
+
+            <!-- A Levels -->
+            <div class="edu-card glass-panel">
+              <h3>GCE A Levels</h3>
+              <div class="edu-institution">Cambridge Assessment (CAIE)</div>
+              <div class="timeline-date">22/02/2022 - 15/05/2022 | Dhaka, Bangladesh</div>
+              <div class="edu-details">
+                <span><strong>Field:</strong> Information and Communication Technologies</span>
+                <span><strong>EQF Level:</strong> Level 5</span>
+              </div>
+              <a href="https://www.cambridgeinternational.org" target="_blank" class="timeline-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                Cambridge Website
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Languages & Hackathons column -->
+        <div>
+          <div class="section-header">
+            <span class="section-subtitle">COMMUNICATION</span>
+            <h2 class="section-title">Languages</h2>
+          </div>
+          <div class="languages-box glass-panel">
+            <div class="lang-bars">
+              
+              <!-- English -->
+              <div class="lang-item">
+                <div class="lang-info">
+                  <span>English</span>
+                  <span class="lang-level">C2 (Native/Fluent)</span>
+                </div>
+                <div class="lang-progress-bg">
+                  <div class="lang-progress" style="width: 100%;"></div>
+                </div>
+                <div class="lang-subgrids">
+                  <span>Listening: C2</span>
+                  <span>Speaking: C2</span>
+                  <span>Writing: C2</span>
+                </div>
+              </div>
+
+              <!-- Finnish -->
+              <div class="lang-item">
+                <div class="lang-info">
+                  <span>Finnish</span>
+                  <span class="lang-level">B2 (Intermediate)</span>
+                </div>
+                <div class="lang-progress-bg">
+                  <div class="lang-progress" style="width: 75%;"></div>
+                </div>
+                <div class="lang-subgrids">
+                  <span>Listening: B2</span>
+                  <span>Speaking: B1</span>
+                  <span>Writing: B2</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          
+          <div class="section-header" style="margin-top: 3.5rem; margin-bottom: 2rem;">
+            <span class="section-subtitle">ACCOMPLISHMENTS</span>
+            <h2 class="section-title" style="font-size: 1.8rem;">Achievements</h2>
+          </div>
+          <div class="education-cards">
+            <!-- Hackathon 1 -->
+            <div class="edu-card glass-panel" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+              <div class="project-media-slot" style="height: 160px;">
+                <img class="project-image" src="assets/junction_oulu.png" alt="JunctionOulu Award Screenshot" onerror="this.style.display='none'">
+                <div class="project-media-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 30px; height: 30px; color: var(--accent);"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <span style="font-size: 0.75rem;">Add junction_oulu.png Here</span>
+                </div>
+              </div>
+              <div style="padding: 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1;">
+                <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.25rem;">JunctionOulu Hackathon 2025</h4>
+                <span style="color: var(--accent); font-weight:600; font-size: 0.9rem; margin-bottom: 0.5rem;">1st Runner Up (Nordea Track)</span>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem; flex-grow: 1;">
+                  Won second place in Nordea's challenge for designing secure financial management APIs.
+                </p>
+                <a href="https://eu.junctionplatform.com/projects/junctionx-oulu-hackathon" target="_blank" class="timeline-link" style="margin-top: auto; font-size: 0.8rem;">
+                  Project Link
+                </a>
+              </div>
+            </div>
+            
+            <!-- Hackathon 2 -->
+            <div class="edu-card glass-panel" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+              <div class="project-media-slot" style="height: 160px;">
+                <img class="project-image" src="assets/junction_helsinki.png" alt="Junction 2025 Screenshot" onerror="this.style.display='none'">
+                <div class="project-media-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 30px; height: 30px; color: var(--accent);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  <span style="font-size: 0.75rem;">Add junction_helsinki.png Here</span>
+                </div>
+              </div>
+              <div style="padding: 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1;">
+                <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.25rem;">Junction 2025</h4>
+                <span style="color: var(--accent); font-weight:600; font-size: 0.9rem; margin-bottom: 0.5rem;">P&G's Challenge Completed</span>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem; flex-grow: 1;">
+                  Successfully completed P&G's automated operations task in Helsinki hackathon event.
+                </p>
+                <a href="http://hackjunction.app/hackathons/junction-2025" target="_blank" class="timeline-link" style="margin-top: auto; font-size: 0.8rem;">
+                  Event Info
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">ENGAGE</span>
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+      
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          
+          <!-- Email Card -->
+          <div class="contact-card glass-panel">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div class="contact-detail">
+              <h4>Email</h4>
+              <p><a href="mailto:alimahdides@gmail.com">alimahdides@gmail.com</a></p>
+            </div>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="contact-card glass-panel">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div class="contact-detail">
+              <h4>Phone</h4>
+              <p><a href="tel:+3580417416771">(+358) 0417416771</a></p>
+            </div>
+          </div>
+
+          <!-- Location Card -->
+          <div class="contact-card glass-panel">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="contact-detail">
+              <h4>Location</h4>
+              <p>Oulu, Finland</p>
+            </div>
+          </div>
+
+          <!-- Social Shortcuts -->
+          <div class="contact-socials">
+            <a href="https://www.linkedin.com/in/mohammad-ali-mahdi-061558347" target="_blank" class="social-btn" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://github.com/Mojojojo9975" target="_blank" class="social-btn" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="https://wa.me/8801648846041" target="_blank" class="social-btn" aria-label="WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 8 0a8 8 0 0 0-6.73 11.776L0 16l4.331-1.137A7.86 7.86 0 0 0 8 16a8 8 0 0 0 8-8 7.9 7.9 0 0 0-2.399-5.674M8 14.5a6.5 6.5 0 0 1-3.378-.945l-.242-.143-2.507.658.67-2.443-.157-.251a6.5 6.5 0 1 1 5.613 3.124M12.3 9.4c-.2-.1-1.393-.688-1.61-.767-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.48.08-.2-.1-.84-.31-1.599-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.09-.088.2-.24.3-.36.097-.12.13-.2.196-.33a.37.37 0 0 0-.018-.346c-.05-.1-.48-1.15-.658-1.582-.172-.415-.344-.359-.48-.365-.124-.005-.267-.005-.409-.005a.77.77 0 0 0-.556.26c-.19.2-.724.708-.724 1.724s.729 2.013.833 2.155c.104.14 1.43 2.185 3.47 3.07 1.943.84 2.338.676 2.766.637.429-.04 1.393-.57 1.59-.113.2-.544.2-.103.14-.18c-.06-.078-.22-.1-.42-.2"/></svg>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-panel glass-panel">
+          <form id="portfolio-contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required placeholder="John Doe">
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required placeholder="john@example.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required placeholder="Collab Opportunity / Project Consultation">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required placeholder="Hello Mohammad, I'd love to connect regarding..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary submit-btn">
+              Send Message
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast Toast Notification Container -->
+  <div class="toast-notification" id="toast">
+    <div class="toast-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+    </div>
+    <div class="toast-content">
+      <h4>Message Sent!</h4>
+      <p>Thank you. I will get back to you shortly.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Mohammad Ali Mahdi. All rights reserved.</p>
+      <p>Built with lightweight semantic HTML & custom glassmorphism styling.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
