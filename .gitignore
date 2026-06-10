@@ -1,2 +1,2 @@
-Portfolio.pdf
-Ali Mahdi's CV.pdf
+# Ignore CV and Portfolio PDFs
+*.pdf
