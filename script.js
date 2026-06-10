@@ -141,14 +141,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Bind error handler to existing images
     document.querySelectorAll('img').forEach(img => {
-        // If image is already broken (cached error)
-        if (img.naturalWidth === 0) {
+        // If image is already complete and failed (naturalWidth is 0)
+        if (img.complete && img.naturalWidth === 0) {
             replaceImageWithPlaceholder(img);
+        } else if (!img.complete) {
+            // If still loading, set error listener
+            img.addEventListener('error', () => {
+                replaceImageWithPlaceholder(img);
+            });
         }
-        
-        // Otherwise, bind to error event
-        img.addEventListener('error', () => {
-            replaceImageWithPlaceholder(img);
-        });
     });
 });
