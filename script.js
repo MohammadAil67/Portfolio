@@ -115,7 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'img-datamend': { icon: 'fa-chart-pie', label: 'Datamend Analytics Dashboard' },
         'img-campaign-clickr': { icon: 'fa-diagram-project', label: 'CampaignClickR Automation Flow' },
         'img-bookrag': { icon: 'fa-book-open-reader', label: 'BookRAG Chat Interface' },
-        'img-junction-photo': { icon: 'fa-trophy', label: 'Junction Hackathon Experience' }
+        'img-junction-photo': { icon: 'fa-trophy', label: 'Junction Hackathon Experience' },
+        'img-achievement-datamend': { icon: 'fa-chart-pie', label: 'Datamend Hackathon Project' }
     };
 
     function replaceImageWithPlaceholder(imgEl) {
