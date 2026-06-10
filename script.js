@@ -1,167 +1,154 @@
-/* ==========================================================================
-   MOHAMMAD ALI MAHDI - PORTFOLIO JAVASCRIPT LOGIC
-   ========================================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
+    // DOM Elements
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.page-section');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navMenu = document.getElementById('main-nav');
+    const logoLink = document.getElementById('header-logo');
 
-  /* ------------------------------------------------------------------------
-     1. HERO SECTION TYPING ANIMATION
-     ------------------------------------------------------------------------ */
-  const typingText = document.getElementById('typing-text');
-  const phrases = [
-    'Software Developer',
-    'B.Sc. @ University of Oulu',
-    'Flutter & Python Specialist',
-    'AI Integrations Enthusiast'
-  ];
-  
-  let phraseIndex = 0;
-  let characterIndex = 0;
-  let isDeleting = false;
-  let typingSpeed = 100;
+    // Section transition duration (matches CSS timing)
+    const transitionSpeedMs = 200;
 
-  function typeEffect() {
-    const currentPhrase = phrases[phraseIndex];
-    
-    if (isDeleting) {
-      // Remove character
-      typingText.textContent = currentPhrase.substring(0, characterIndex - 1);
-      characterIndex--;
-      typingSpeed = 50; // Erase faster
-    } else {
-      // Add character
-      typingText.textContent = currentPhrase.substring(0, characterIndex + 1);
-      characterIndex++;
-      typingSpeed = 120; // Normal typing speed
-    }
+    // Active Section state tracking
+    let isTransitioning = false;
 
-    // Handle phrase end / transitions
-    if (!isDeleting && characterIndex === currentPhrase.length) {
-      isDeleting = true;
-      typingSpeed = 2000; // Pause at full phrase
-    } else if (isDeleting && characterIndex === 0) {
-      isDeleting = false;
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-      typingSpeed = 500; // Pause before typing next phrase
-    }
+    // 1. NAVIGATION TAB ROUTING (FADE OUT -> SWITCH -> FADE IN)
+    function switchTab(targetId) {
+        const targetSection = document.getElementById(targetId);
+        const activeSection = document.querySelector('.page-section.active');
+        
+        if (!targetSection || isTransitioning) return;
+        if (activeSection && activeSection.id === targetId) return;
 
-    setTimeout(typeEffect, typingSpeed);
-  }
+        isTransitioning = true;
 
-  // Init typing effect if the container exists
-  if (typingText) {
-    typeEffect();
-  }
+        // Close mobile menu if open
+        navMenu.classList.remove('mobile-open');
+        mobileMenuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
 
-
-  /* ------------------------------------------------------------------------
-     2. NAVIGATION & HEADER EFFECTS ON SCROLL
-     ------------------------------------------------------------------------ */
-  const header = document.querySelector('header');
-  
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
-
-
-  /* ------------------------------------------------------------------------
-     3. INTERSECTION OBSERVER FOR ACTIVE NAV LINKS
-     ------------------------------------------------------------------------ */
-  const sections = document.querySelectorAll('section, footer');
-  const navLinks = document.querySelectorAll('.nav-links a');
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '-30% 0px -60% 0px', // Trigger when section occupies the middle portion of viewport
-    threshold: 0
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        if (!id) return;
-
+        // Update active class in navigation links
         navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${id}`) {
-            link.classList.add('active');
-          }
+            if (link.getAttribute('data-target') === targetId) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
         });
-      }
-    });
-  }, observerOptions);
 
-  sections.forEach(section => {
-    if (section.getAttribute('id')) {
-      observer.observe(section);
+        if (activeSection) {
+            // Fade out the current active section
+            activeSection.style.opacity = '0';
+            activeSection.style.transform = 'translateY(-10px)';
+            activeSection.style.transition = `opacity ${transitionSpeedMs}ms ease, transform ${transitionSpeedMs}ms ease`;
+
+            setTimeout(() => {
+                // Hide old section and reset styles
+                activeSection.classList.remove('active');
+                activeSection.style.opacity = '';
+                activeSection.style.transform = '';
+                activeSection.style.transition = '';
+
+                // Show and fade in the new section
+                targetSection.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'instant' });
+                isTransitioning = false;
+            }, transitionSpeedMs);
+        } else {
+            // If no section was active, show the target immediately
+            targetSection.classList.add('active');
+            isTransitioning = false;
+        }
     }
-  });
 
-
-  /* ------------------------------------------------------------------------
-     4. MOBILE HAMBURGER MENU DRAWER
-     ------------------------------------------------------------------------ */
-  const hamburgerBtn = document.getElementById('hamburger-btn');
-  const navLinksList = document.getElementById('nav-links');
-
-  if (hamburgerBtn && navLinksList) {
-    hamburgerBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      navLinksList.classList.toggle('open');
-    });
-
-    // Close menu when clicking a link
+    // Handle Nav link click
     navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navLinksList.classList.remove('open');
-      });
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('data-target');
+            if (window.location.hash !== `#${targetId}`) {
+                window.location.hash = targetId;
+            } else {
+                switchTab(targetId);
+            }
+        });
     });
 
-    // Close menu when clicking anywhere else outside the menu
+    // Handle logo click
+    logoLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.hash = 'about';
+    });
+
+    // Handle Hash Change (Browser Back / Forward / Direct Links)
+    function handleHashChange() {
+        const hash = window.location.hash.substring(1) || 'about';
+        switchTab(hash);
+    }
+
+    window.addEventListener('hashchange', handleHashChange);
+    // Initialize tab from current hash
+    handleHashChange();
+
+
+    // 2. MOBILE RESPONSIVE HAMBURGER MENU
+    mobileMenuToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('mobile-open');
+        if (isOpen) {
+            mobileMenuToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        } else {
+            mobileMenuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }
+    });
+
+    // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
-      if (navLinksList.classList.contains('open') && !navLinksList.contains(e.target) && e.target !== hamburgerBtn) {
-        navLinksList.classList.remove('open');
-      }
+        if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('mobile-open');
+            mobileMenuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }
     });
-  }
 
 
-  /* ------------------------------------------------------------------------
-     5. CONTACT FORM INTERCEPT & TOAST NOTIFICATION
-     ------------------------------------------------------------------------ */
-  const contactForm = document.getElementById('portfolio-contact-form');
-  const toast = document.getElementById('toast');
+    // 3. ROBUST IMAGE LOAD FAILURE FALLBACK PLACEHOLDERS
+    const fallbackData = {
+        'img-botani-nav': { icon: 'fa-map-location-dot', label: 'BotaniNav System Map' },
+        'img-datamend': { icon: 'fa-chart-pie', label: 'Datamend Analytics Dashboard' },
+        'img-campaign-clickr': { icon: 'fa-diagram-project', label: 'CampaignClickR Automation Flow' },
+        'img-bookrag': { icon: 'fa-book-open-reader', label: 'BookRAG Chat Interface' },
+        'img-junction-photo': { icon: 'fa-trophy', label: 'Junction Hackathon Experience' }
+    };
 
-  if (contactForm && toast) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
+    function replaceImageWithPlaceholder(imgEl) {
+        const id = imgEl.id;
+        const info = fallbackData[id] || { icon: 'fa-briefcase', label: 'Portfolio Asset' };
+        
+        // Create CSS glassmorphic fallback container
+        const fallbackContainer = document.createElement('div');
+        fallbackContainer.className = 'project-fallback';
+        fallbackContainer.innerHTML = `
+            <i class="fa-solid ${info.icon}"></i>
+            <span>${info.label}</span>
+            <small style="color: var(--text-light); font-size:11px;">Image asset unavailable</small>
+        `;
+        
+        // Replace image element in parent
+        const parent = imgEl.parentNode;
+        if (parent) {
+            parent.innerHTML = '';
+            parent.appendChild(fallbackContainer);
+        }
+    }
 
-      // Collect data (could be forwarded to an API later, e.g. Formspree / Vercel Serverless Function)
-      const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value
-      };
-
-      console.log('Form submission received:', formData);
-
-      // Trigger Toast notification
-      toast.classList.add('show');
-
-      // Clear Form Fields
-      contactForm.reset();
-
-      // Dismiss Toast after 3.5 seconds
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 3500);
+    // Bind error handler to existing images
+    document.querySelectorAll('img').forEach(img => {
+        // If image is already broken (cached error)
+        if (img.naturalWidth === 0) {
+            replaceImageWithPlaceholder(img);
+        }
+        
+        // Otherwise, bind to error event
+        img.addEventListener('error', () => {
+            replaceImageWithPlaceholder(img);
+        });
     });
-  }
-
 });
