@@ -121,6 +121,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function replaceImageWithPlaceholder(imgEl) {
         const id = imgEl.id;
+        if (id === 'img-profile') {
+            // Restore text initials as fallback for profile circle
+            const fallbackEl = document.createElement('span');
+            fallbackEl.className = 'profile-initials';
+            fallbackEl.textContent = 'MAM';
+            const parent = imgEl.parentNode;
+            if (parent) {
+                parent.innerHTML = '';
+                parent.appendChild(fallbackEl);
+            }
+            return;
+        }
+
         const info = fallbackData[id] || { icon: 'fa-briefcase', label: 'Portfolio Asset' };
         
         // Create CSS glassmorphic fallback container
