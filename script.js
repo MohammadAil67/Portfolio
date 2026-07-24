@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. ROBUST IMAGE LOAD FAILURE FALLBACK PLACEHOLDERS
     const fallbackData = {
+        'img-excellstudy': { icon: 'fa-graduation-cap', label: 'ExcellStudy AI Platform' },
         'img-botani-nav': { icon: 'fa-map-location-dot', label: 'BotaniNav System Map' },
         'img-datamend': { icon: 'fa-chart-pie', label: 'Datamend Analytics Dashboard' },
         'img-campaign-clickr': { icon: 'fa-diagram-project', label: 'CampaignClickR Automation Flow' },
