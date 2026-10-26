@@ -1,169 +1,75 @@
+// script.js - Handles navigation, section transitions, and animations
+
 document.addEventListener('DOMContentLoaded', () => {
-    // DOM Elements
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.page-section');
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const navMenu = document.getElementById('main-nav');
-    const logoLink = document.getElementById('header-logo');
+  const navLinks = document.querySelectorAll('nav a[data-target]');
+  const sections = document.querySelectorAll('section');
+  const header = document.querySelector('header');
+  const menuToggle = document.getElementById('mobile-menu-toggle');
+  const navMenu = document.getElementById('main-nav');
 
-    // Section transition duration (matches CSS timing)
-    const transitionSpeedMs = 200;
+  // Helper to remove active states
+  const clearActive = () => {
+    navLinks.forEach(link => link.classList.remove('active'));
+    sections.forEach(sec => sec.classList.remove('active'));
+  };
 
-    // Active Section state tracking
-    let isTransitioning = false;
+  // Fade-in animation helper
+  const fadeIn = (element) => {
+    element.style.opacity = '0';
+    element.style.display = 'block';
+    requestAnimationFrame(() => {
+      element.style.transition = 'opacity 0.6s ease-out';
+      element.style.opacity = '1';
+    });
+  };
 
-    // 1. NAVIGATION TAB ROUTING (FADE OUT -> SWITCH -> FADE IN)
-    function switchTab(targetId) {
-        const targetSection = document.getElementById(targetId);
-        const activeSection = document.querySelector('.page-section.active');
-        
-        if (!targetSection || isTransitioning) return;
-        if (activeSection && activeSection.id === targetId) return;
+  // Click handler for navigation links
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('data-target');
+      const targetSection = document.getElementById(targetId);
+      if (!targetSection) return;
 
-        isTransitioning = true;
+      clearActive();
+      link.classList.add('active');
+      // Hide all sections instantly
+      sections.forEach(sec => sec.style.display = 'none');
+      // Fade in the target section
+      fadeIn(targetSection);
+      targetSection.classList.add('active');
 
-        // Close mobile menu if open
-        navMenu.classList.remove('mobile-open');
-        mobileMenuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      // Close mobile menu if open
+      if (navMenu && navMenu.classList.contains('open')) {
+        navMenu.classList.remove('open');
+        menuToggle.classList.remove('open');
+      }
+    });
+  });
 
-        // Update active class in navigation links
-        navLinks.forEach(link => {
-            if (link.getAttribute('data-target') === targetId) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
+  // Ensure the first section is visible on load
+  if (sections.length) {
+    const first = sections[0];
+    first.style.display = 'block';
+    first.classList.add('active');
+    const firstLink = document.querySelector(`nav a[data-target="${first.id}"]`);
+    if (firstLink) firstLink.classList.add('active');
+  }
 
-        if (activeSection) {
-            // Fade out the current active section
-            activeSection.style.opacity = '0';
-            activeSection.style.transform = 'translateY(-10px)';
-            activeSection.style.transition = `opacity ${transitionSpeedMs}ms ease, transform ${transitionSpeedMs}ms ease`;
+  // Mobile menu toggle
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      menuToggle.classList.toggle('open');
+    });
+  }
 
-            setTimeout(() => {
-                // Hide old section and reset styles
-                activeSection.classList.remove('active');
-                activeSection.style.opacity = '';
-                activeSection.style.transform = '';
-                activeSection.style.transition = '';
-
-                // Show and fade in the new section
-                targetSection.classList.add('active');
-                window.scrollTo({ top: 0, behavior: 'instant' });
-                isTransitioning = false;
-            }, transitionSpeedMs);
-        } else {
-            // If no section was active, show the target immediately
-            targetSection.classList.add('active');
-            isTransitioning = false;
-        }
+  // Optional: sticky header shadow on scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
     }
-
-    // Handle Nav link click
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('data-target');
-            if (window.location.hash !== `#${targetId}`) {
-                window.location.hash = targetId;
-            } else {
-                switchTab(targetId);
-            }
-        });
-    });
-
-    // Handle logo click
-    logoLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.location.hash = 'about';
-    });
-
-    // Handle Hash Change (Browser Back / Forward / Direct Links)
-    function handleHashChange() {
-        const hash = window.location.hash.substring(1) || 'about';
-        switchTab(hash);
-    }
-
-    window.addEventListener('hashchange', handleHashChange);
-    // Initialize tab from current hash
-    handleHashChange();
-
-
-    // 2. MOBILE RESPONSIVE HAMBURGER MENU
-    mobileMenuToggle.addEventListener('click', () => {
-        const isOpen = navMenu.classList.toggle('mobile-open');
-        if (isOpen) {
-            mobileMenuToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-        } else {
-            mobileMenuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-        }
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
-            navMenu.classList.remove('mobile-open');
-            mobileMenuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-        }
-    });
-
-
-    // 3. ROBUST IMAGE LOAD FAILURE FALLBACK PLACEHOLDERS
-    const fallbackData = {
-        'img-excellstudy': { icon: 'fa-graduation-cap', label: 'ExcellStudy AI Platform' },
-        'img-botani-nav': { icon: 'fa-map-location-dot', label: 'BotaniNav System Map' },
-        'img-datamend': { icon: 'fa-chart-pie', label: 'Datamend Analytics Dashboard' },
-        'img-campaign-clickr': { icon: 'fa-diagram-project', label: 'CampaignClickR Automation Flow' },
-        'img-bookrag': { icon: 'fa-book-open-reader', label: 'BookRAG Chat Interface' },
-        'img-junction-photo': { icon: 'fa-trophy', label: 'Junction Hackathon Experience' },
-        'img-achievement-datamend': { icon: 'fa-chart-pie', label: 'Datamend Hackathon Project' }
-    };
-
-    function replaceImageWithPlaceholder(imgEl) {
-        const id = imgEl.id;
-        if (id === 'img-profile') {
-            // Restore text initials as fallback for profile circle
-            const fallbackEl = document.createElement('span');
-            fallbackEl.className = 'profile-initials';
-            fallbackEl.textContent = 'MAM';
-            const parent = imgEl.parentNode;
-            if (parent) {
-                parent.innerHTML = '';
-                parent.appendChild(fallbackEl);
-            }
-            return;
-        }
-
-        const info = fallbackData[id] || { icon: 'fa-briefcase', label: 'Portfolio Asset' };
-        
-        // Create CSS glassmorphic fallback container
-        const fallbackContainer = document.createElement('div');
-        fallbackContainer.className = 'project-fallback';
-        fallbackContainer.innerHTML = `
-            <i class="fa-solid ${info.icon}"></i>
-            <span>${info.label}</span>
-            <small style="color: var(--text-light); font-size:11px;">Image asset unavailable</small>
-        `;
-        
-        // Replace image element in parent
-        const parent = imgEl.parentNode;
-        if (parent) {
-            parent.innerHTML = '';
-            parent.appendChild(fallbackContainer);
-        }
-    }
-
-    // Bind error handler to existing images
-    document.querySelectorAll('img').forEach(img => {
-        // If image is already complete and failed (naturalWidth is 0)
-        if (img.complete && img.naturalWidth === 0) {
-            replaceImageWithPlaceholder(img);
-        } else if (!img.complete) {
-            // If still loading, set error listener
-            img.addEventListener('error', () => {
-                replaceImageWithPlaceholder(img);
-            });
-        }
-    });
+  });
 });
